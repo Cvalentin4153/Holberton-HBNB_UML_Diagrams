@@ -1,0 +1,35 @@
+```mermaid
+classDiagram
+    direction TB
+
+    class PresentationLayer {
+        <<Package>>
+        API Endpoints
+        Services
+        +resgisterUser()
+        +createPlace()
+        +submitReview()
+        +fetchPlaces()
+    }
+
+    class BusinessLogicLayer {
+    <<Package>>
+    User
+    Place
+    Review
+    Amenity
+    +validateData()
+    +processRequest()
+    }
+
+    class PersistenceLayer {
+    <<Package>>
+    Database
+    +save()
+    +update()
+    +delete()
+    +query()
+    }
+    PresentationLayer --> BusinessLogicLayer : Uses Facade
+    BusinessLogicLayer --> PersistenceLayer : Database Operations
+```
