@@ -7,7 +7,7 @@ participant BusinessLogic
 participant Database
 
 User->>API: API Call +createUser()
-API->>BusinessLogic: +processRequest() validateRequest()
+API->>BusinessLogic: +processRequest() +validateRequest()
 BusinessLogic->>Database: Save and Store Data
 Database-->BusinessLogic: Confirm Data Storage
 BusinessLogic-->API: Return User
